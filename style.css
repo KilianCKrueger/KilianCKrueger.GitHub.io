@@ -3,17 +3,17 @@
 
 li, a, button {
     font-family: "Quantico", sans-serif;
-    font-weight: 400; /* Korrigiert auf verfügbares Schriftgewicht */
+    font-weight: 400;
     font-size: 17px;
     text-decoration: none;
     margin-right: 10px;
 }
 
 h2 {
-    font-family: "Quantico", sans-serif; /* Auffälligere Schriftart für Überschriften */
-    font-size: 24px; /* Leicht vergrößert */
-    font-weight: 400; /* Standardgewicht für diese Schriftart */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); /* Schatten für mehr Tiefe */
+    font-family: "Quantico", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     margin-left: 17px;
 }
 
