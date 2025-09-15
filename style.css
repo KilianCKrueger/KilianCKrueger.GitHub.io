@@ -184,6 +184,17 @@ header {
         display: none;
     }
 
+    .navbar a.active {
+      font-size: 0;
+      
+    }
+
+    .navbar a.active::before {
+      content: "Kilian Clemens Krüger";
+      font-size: 24px; 
+      vertical-align: middle;
+    }
+
     .navbar a.contact {
         font-size: 0;
         padding: 15px 20px;
