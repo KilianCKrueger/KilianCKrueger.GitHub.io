@@ -190,7 +190,7 @@ header {
     }
 
     .navbar a.active::before {
-      content: "Kilian Clemens Krüger";
+      content: "Kilian C. Krüger";
       font-size: 24px; 
       vertical-align: middle;
     }
