@@ -174,7 +174,7 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media  (max-width: 768px) {
+@media  (max-width: 1080px) {
 
     .navbar a[href="#Education"],
     .navbar a[href="#AndroidDevelopment"],
