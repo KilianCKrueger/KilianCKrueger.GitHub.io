@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Jersey+15&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-li, a, button {
+
+a, button {
     font-family: "Quantico", sans-serif;
     font-weight: 400;
     font-size: 17px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+li {
+    font-family: "Quantico", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
     text-decoration: none;
     margin-right: 10px;
 }
@@ -146,20 +155,67 @@ header {
   color: rgb(76, 54, 58); 
 }
 
+#Contact h1 {
+  display: none;
+}
+#Contact h2 {
+  text-shadow: none;
+  margin: 20px 0;
+  text-align: center;
+}
+
+#Contact h2 a {
+  display: inline-block;
+  background-color: #E9B15A;
+  color: rgb(76, 54, 58);
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 @media screen and (max-width: 768px) {
-    .navbar {
-        overflow-x: auto; 
-        white-space: nowrap; 
+
+    .navbar a[href="#Education"],
+    .navbar a[href="#AndroidDevelopment"],
+    .navbar a[href="#JavaApps"],
+    .navbar a[href="#FurtherWorkExperience"],
+    .navbar a[href="#OtherHobbies"] {
+        display: none;
     }
 
-    .navbar a {
-        float: none; 
-        display: inline-block; 
+    .navbar a.contact {
+        font-size: 0;
+        padding: 15px 20px;
+    }
+
+    .navbar a.contact::before {
+        content: "✉️"; 
+        font-size: 24px; 
+        vertical-align: middle; 
+    }
+
+    .navbar a.contact:hover {
+        background-color: transparent;
+        color: #f2f2f2;
+    }
+
+    body {
+        padding-top: 75px;
+    }
+
+    section[id] {
+        scroll-margin-top: 105px;
+    }
+
+    section ul li {
+        font-size: 17px;
     }
 
     h1 {
         font-size: 28px;
         padding: 10px 0;
+        top: 58px; 
     }
 
     h2 {
@@ -169,4 +225,4 @@ header {
     p {
         font-size: 17px;
     }
-}
+  }
