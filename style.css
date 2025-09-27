@@ -15,6 +15,11 @@ li {
     font-size: 18px;
     text-decoration: none;
     margin-right: 10px;
+    list-style: none;
+    position: relative; 
+    padding-left: 28px; 
+    margin-bottom: 10px;
+    margin-left: 55px;
 }
 
 h2 {
@@ -30,17 +35,13 @@ h2 a {
     text-decoration: none;
 }
 
-li {
-    list-style: none;
-    margin-left: 28px;
-    display: flex;
-    align-items: baseline;
-}
 
 li::before {
   content: "⚛"; 
-  margin-right: 10px;
   font-weight: bold; 
+  position: absolute; 
+  left: 0; 
+  top: 2px; 
 }
 
 ul {
@@ -57,6 +58,11 @@ p {
 
 a {
   margin: 0px;
+}
+
+li a {
+  color: #E9B15A;
+  text-decoration: underline;
 }
 
 p a {
@@ -79,11 +85,22 @@ h1 {
 video {
   display: block;
   height: auto;
+  width: 100%;
+}
+
+.video-container {
+  display: block;
   margin: 20px auto 40px auto;
   border-radius: 12px; 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
   max-width: 250px;
+
+  overflow: hidden; 
+}
+
+.video-container.fix-border-artifact video {
+  transform: scale(1.03); 
 }
 
 .wide_video {
