@@ -4,33 +4,7 @@
 <head>
     <title>Memory</title>
     <link rel="stylesheet" href="memoryStyle.css">
-    <!-- <style>
-        td {
-            border: 1px solid black;
-            width: 200px;
-            height: 200px;
-            z-index: 0;
-        }
-
-        td img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            z-index: 10;
-        }
-
-        tr {
-            border: 1px solid black;
-        }
-
-        table {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-    </style> -->
 </head>
-
-
 
 <body onload="buildGame();">
     <header>
@@ -47,15 +21,12 @@
     </header>
 
     <section class="centered">
-    <h1>Memory</h1>
-    <p>please don't overuse this game<br>
-    the requests are limited to 50 per day by gyphy.com</p>
+        <h1>Memory</h1>
+        <label for="tags"></label>
+        <input id="tags" type="text" name="tags" autofocus><br>
+        <button onClick="buildGame()">search for gifs</button>
 
-    <label for="tags"></label>
-    <input id="tags" type="text" name="tags" autofocus><br>
-    <button onClick="buildGame()">search for gifs</button>
-
-    <h2 id="result"></h2>
+        <h2 id="result"></h2>
     </section>
 
     <table>
@@ -125,12 +96,13 @@
     </table>
 
     <section class="centered">
+
         <h2>with the currently most popular gifs of a topic</h2>
+        <p>please don't overuse this game<br>
+            the requests are limited to 100 per hour by gyphy.com</p>
         <div class="separator"></div>
+
     </section>
-
-
-
 
     <script>
         const examples = ["Grogu", "The Hobbit", "Spiderman", "The Order Of The Phoenix", "Mojang", "The Dark Knight", "Cute Kittens", "Puppies", "Minecraft Build", "Skywalker"];
