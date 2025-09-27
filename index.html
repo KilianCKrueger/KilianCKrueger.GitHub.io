@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body >
+<body>
 
 <header>
     <nav class="navbar">
         <a class="active" href="#AboutMe">Kilian Clemens Krüger - Portfolio</a>
         <a href="#AndroidDevelopment">Android Development</a>
         <a href="#JavaApps">Java Apps</a>
+        <a href="#JS">JS</a>
         <a href="#FurtherWorkExperience">Further Work Experience</a>
         <a href="#OtherHobbies">Other Hobbies</a>
         <a href="#Education">Education</a>
@@ -47,14 +48,14 @@
         <p>While playing GeoGuessr, I discovered that I couldn't reliably identify domains I came across. Motivated to memorize the domains, I created an app to practise and quiz me.
              <!-- <a href="">Get it on GitHub</a>. -->
         </p>
-        <div class="video-container fix-border-artifact">
+        <div class="video-container">
             <video src="media/Name_The_Domain_Video.mp4" controls></video>
         </div>
 
         <h2>🧠 Train Your Brain</h2>
         <p>An App challenging you to remember the sequence of blinking buttons. Then the user recreates this sequence by memory. Similar to the Board Game Simon from Hasbro. <a href="https://github.com/KilianCKrueger/Train_Your_Brain">Get it on GitHub</a>.</p>
         
-        <div class="video-container fix-border-artifact">
+        <div class="video-container">
             <video src="media/Train_Your_Brain_Video.mp4" controls></video>
         </div>    
     </section>
@@ -67,6 +68,17 @@
         <h2>🔠 The Scrabble Cheater</h2>
         <p>This program requires an input of letters, of which it creates permutations. These are compared to the supplied dictionary, eventually outputting words that can be played in Scrabble.</p>
         <video class="wide_video" src="media/Scrabble_Cheater_Video.mp4" controls></video>
+    </section>
+
+    <div class="separator"></div>
+
+    <section id="JS">
+        <h1>JavaScript</h1>
+        <h2>🖼️ Memory</h2>
+        <p>In the context of my Web Programming Course, I developed a memory game in browser.</p>
+        <div class="button-container">
+            <a href="Memory.html" class="button-link" target="_blank">Open Memory</a>
+        </div>
     </section>
 
     <div class="separator"></div>
@@ -91,6 +103,7 @@
           <h2>🏐 Playing Volleyball</h2>
         <p>Since 2013, I've been playing volleyball weekly.</p>
     </section>
+
     <div class="separator"></div>
 
     <section id="Education">
@@ -110,8 +123,9 @@
     <div class="separator"></div>
 
     <section id="Contact">
-        <h1>Contact</h1>
-        <h2><a href="mailto:KilianCKrueger@gmail.com">✉ KilianCKrueger@gmail.com</a></h2>
+        <div class="button-container">
+            <a href="mailto:KilianCKrueger@gmail.com" class="button-link" target="_blank">✉ KilianCKrueger@gmail.com</a>
+        </div>
     </section>
 </main>
 </body>

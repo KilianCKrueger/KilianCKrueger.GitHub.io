@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Memory</title>
+    <link rel="stylesheet" href="memoryStyle.css">
+    <!-- <style>
+        td {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            z-index: 0;
+        }
+
+        td img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 10;
+        }
+
+        tr {
+            border: 1px solid black;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style> -->
+</head>
+
+
+
+<body onload="buildGame();">
+    <header>
+        <nav class="navbar">
+            <a class="active" href="index.html">Kilian Clemens Krüger - Portfolio</a>
+            <a href="index.html#AndroidDevelopment">Android Development</a>
+            <a href="index.html#JavaApps">Java Apps</a>
+            <a href="index.html#JS">JS</a>
+            <a href="index.html#FurtherWorkExperience">Further Work Experience</a>
+            <a href="index.html#OtherHobbies">Other Hobbies</a>
+            <a href="index.html#Education">Education</a>
+            <a class="contact" href="mailto:KilianCKrueger@gmail.com" target="_blank">Contact</a>
+        </nav>
+    </header>
+
+    <section class="centered">
+    <h1>Memory</h1>
+    <p>please don't overuse this game<br>
+    the requests are limited to 50 per day by gyphy.com</p>
+
+    <label for="tags"></label>
+    <input id="tags" type="text" name="tags" autofocus><br>
+    <button onClick="buildGame()">search for gifs</button>
+
+    <h2 id="result"></h2>
+    </section>
+
+    <table>
+        <tbody>
+            <tr>
+                <td id="0" onclick="setupPattern(0)"><img height="250" width="320" id="gif0"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+                <td id="1" onclick="setupPattern(1)"><img height="250" width="320" id="gif1"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+                <td id="2" onclick="setupPattern(2)"><img height="250" width="320" id="gif2"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+                <td id="3" onclick="setupPattern(3)"><img height="250" width="320" id="gif3"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+            </tr>
+            <tr>
+                <td id="4" onclick="setupPattern(4)"><img height="250" width="320" id="gif4"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+                <td id="5" onclick="setupPattern(5)"><img height="250" width="320" id="gif5"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+                <td id="6" onclick="setupPattern(6)"><img height="250" width="320" id="gif6"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+                <td id="7" onclick="setupPattern(7)"><img height="250" width="320" id="gif7"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+            </tr>
+
+            <!-- <tr>
+                <td id="0" onclick="setupPattern(0)"><img height="150" width="200" id="gif0"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+                <td id="1" onclick="setupPattern(1)"><img height="150" width="200" id="gif1"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+            </tr>   
+            <tr>
+                <td id="2" onclick="setupPattern(2)"><img height="150" width="200" id="gif2"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+                <td id="3" onclick="setupPattern(3)"><img height="150" width="200" id="gif3"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+            </tr> 
+            <tr>
+                <td id="4" onclick="setupPattern(4)"><img height="150" width="200" id="gif4"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+                <td id="5" onclick="setupPattern(5)"><img height="150" width="200" id="gif5"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+            </tr> 
+            <tr>   
+                <td id="6" onclick="setupPattern(6)"><img height="150" width="200" id="gif6"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+                <td id="7" onclick="setupPattern(7)"><img height="150" width="200" id="gif7"
+                        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif">
+                </td>
+            </tr> -->
+        </tbody>
+    </table>
+
+    <section class="centered">
+        <h2>with the currently most popular gifs of a topic</h2>
+        <div class="separator"></div>
+    </section>
+
+
+
+
+    <script>
+        const examples = ["Grogu", "The Hobbit", "Spiderman", "The Order Of The Phoenix", "Mojang", "The Dark Knight", "Cute Kittens", "Puppies", "Minecraft Build", "Skywalker"];
+        let distribution = [];
+        let correct = [];
+        let sources = [];
+        let chosen = [];
+        let colors = [];
+        let newArr = [];
+        let check = "";
+        let tempStore;
+        let count = 1;
+        let trys = 0;
+        let tags;
+
+        function buildGame() {
+            let o = Math.floor(Math.random() * (examples.length));
+            tags = examples[o];
+            getGif();
+
+
+            // fill colors
+            // colors.push('blue');
+            // colors.push('green');
+            // colors.push('red');
+            // colors.push('yellow');
+
+            // fill distribution new         
+            newArr = [];
+            distribution = [];
+            while (distribution.length < 8) {
+                let r = Math.floor(Math.random() * (4));
+                if (!distribution.includes(r)) {
+                    distribution.push(r);
+                } else if (!newArr.includes(r)) {
+                    newArr.push(r);
+                    distribution.push(r);
+                }
+            }
+
+            // reset whole board to white gif
+            for (let f = 0; f < 8; f++) {
+                let a = document.getElementById("gif" + f.toString());
+                a.src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif";
+                chosen = [];
+                check = "";
+                count = 1;
+                correct = [];
+                trys = 0;
+            }
+
+            document.getElementById("win").remove();
+            document.getElementById("reset").remove();
+
+            console.log(distribution);
+        }
+
+
+        function setupPattern(i) {
+            if (!chosen.includes(i) && !correct.includes(i)) {
+
+                trys++;
+
+                if (chosen.length < 2) {
+                    chosen.push(i);
+                }
+                tempStore = i;
+
+                let gif = document.getElementById("gif" + i.toString());
+                let gifUrl = sources[distribution[i]];
+                gif.src = gifUrl;
+                gif.id = "gif" + i;
+
+                switch (count) {
+                    case 1:
+                        count++;
+                        check = gifUrl;
+                        // console.log("REVEAL ANOTHER");
+                        break;
+                    case 2:
+                        if (check === gifUrl) {
+                            // console.log("PAAR GEFUNDEN");
+                            check = "";
+                            count = 1;
+                            correct.push(chosen[0]);
+                            correct.push(chosen[1]);
+                            chosen = [];
+                            if (correct.length == 8) {
+                                youWon();
+                            }
+                            break;
+                        } else {
+                            // console.log("KEIN PAAR");
+                            count = 3;
+                            break;
+                        }
+                    case 3:
+                        // console.log("RESET");
+                        resetFalseGifPair();
+                        check = "";
+                        chosen.push(tempStore);
+                        count = 2;
+                        check = gifUrl;
+                        break;
+                }
+            } else { console.log("Das Feld hattest du schon -.-"); }
+        }
+
+
+        function resetFalseGifPair() {
+            if (chosen.length == 2) {
+                let a = document.getElementById("gif" + chosen[0].toString());
+                a.src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif";
+                a = document.getElementById("gif" + chosen[1].toString());
+                a.src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGF0NmZmY20zY2Npd3NvM3lpMG0ycTZ2dGp1anpmejh1bzJrZ3E3YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/muAUmp8STHaRjblClO/giphy.gif";
+                chosen = [];
+            }
+        }
+
+        function youWon() {
+            let end = document.createElement("h2");
+            let content = document.createTextNode("Success! It took you " + trys / 2 + " actions. Look for gifs of a specific topic or be surprised when playing ");
+            end.appendChild(content);
+            end.id = "win";
+            document.body.appendChild(end);
+
+
+            let newButton = document.createElement("button");
+            let buttonLabel = document.createTextNode("again");
+            newButton.appendChild(buttonLabel);
+            newButton.id = "reset";
+            // newButton.onclick = buildGame();
+            document.getElementById("win").appendChild(newButton);
+
+            document.getElementById("reset").addEventListener("click", buildGame);
+            // f.onclick = buildGame();
+        }
+
+        async function getGif() {
+            sources = [];
+
+            if (document.getElementById("tags").value !== "") {
+                tags = document.getElementById("tags").value;
+            }
+
+            let safeString = encodeURIComponent(tags);
+            let url = "https://api.giphy.com/v1/gifs/search?api_key=UmrFfAzdtim147x0UJVxXU2Qvj9oQDHO&q=" + safeString + "&rating=G";
+
+            let request = await fetch(url);
+            let a = await request.json();
+
+            // first 4 results
+            for (let i = 0; i < 4; i++) {
+                sources.push(a.data[i].images.original.url);
+            }
+            // console.log(sources);
+        }
+
+
+
+
+
+
+
+
+
+        // ----------- unused -----------
+        // for color memory
+        function setupColorPattern(i) {
+            if (!chosen.includes(i) && !correct.includes(i)) {
+
+                if (chosen.length < 2) {
+                    chosen.push(i);
+                }
+                tempStore = i;
+
+                let c = document.getElementById(i.toString());
+
+                let finalColor = colors[distribution[i]];
+
+                c.bgColor = finalColor;
+
+
+                switch (count) {
+                    case 1:
+                        console.log("case 1");
+                        count++;
+                        check = finalColor;
+                        console.log("REVEAL ANOTHER");
+                        break;
+                    case 2:
+                        console.log("case 2");
+                        if (check === finalColor) {
+                            console.log("PAAR GEFUNDEN");
+                            check = "";
+                            count = 1;
+                            correct.push(chosen[0]);
+                            correct.push(chosen[1]);
+                            console.log(correct);
+                            chosen = [];
+                            break;
+                        } else {
+                            console.log("KEIN PAAR");
+                            count = 3;
+                            break;
+                        }
+                    case 3:
+                        console.log("case 3");
+                        console.log("RESET");
+                        resetFalsePair();
+                        check = "";
+                        chosen.push(tempStore);
+                        count = 2;
+                        check = finalColor;
+                        break;
+
+                }
+            } else { console.log("du hast 2x auf das gleiche Feld geclickt... -.-"); }
+        }
+
+        // important for color memory
+        function resetFalsePair() {
+            if (chosen.length == 2) {
+                let a = document.getElementById(chosen[0].toString());
+                a.bgColor = "white";
+                a = document.getElementById(chosen[1].toString());
+                a.bgColor = "white";
+                chosen = [];
+            }
+        }
+
+    </script>
+</body>
+
+</html>
