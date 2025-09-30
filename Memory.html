@@ -21,15 +21,16 @@
     </header>
 
     <section class="centered">
-        <h1>Memory</h1>
+        <h1>Memory</h1>       
+
         <label for="tags"></label>
         <input id="tags" type="text" name="tags" autofocus><br>
         <button onClick="buildGame()">search for gifs</button>
 
-        <h2 id="result"></h2>
+        
     </section>
 
-    <table>
+    <table id="gifTable">
         <tbody>
             <tr>
                 <td id="0" onclick="setupPattern(0)"><img height="250" width="320" id="gif0"
@@ -100,6 +101,7 @@
         <h2>with the currently most popular gifs of a topic</h2>
         <p>please don't overuse this game<br>
             the requests are limited to 100 per hour by gyphy.com</p>
+            <!-- <h2 id="result"></h2> -->
         <div class="separator"></div>
 
     </section>
@@ -153,9 +155,11 @@
                 correct = [];
                 trys = 0;
             }
-
-            document.getElementById("win").remove();
-            document.getElementById("reset").remove();
+            
+            if(document.getElementById("win") != null){
+                document.getElementById("win").remove();
+                document.getElementById("reset").remove();
+            }
 
             console.log(distribution);
         }
@@ -224,10 +228,22 @@
 
         function youWon() {
             let end = document.createElement("h2");
-            let content = document.createTextNode("Success! It took you " + trys / 2 + " actions. Look for gifs of a specific topic or be surprised when playing ");
+            let content = document.createTextNode("Success! It took you " + trys / 2 + " actions.");
             end.appendChild(content);
             end.id = "win";
-            document.body.appendChild(end);
+
+            let table = getElementById("gifTable")
+            table.appendChild(end);
+
+            // let br = document.createElement("br");
+            // end.appendChild(br);
+
+
+            let hint = document.createElement("h2");
+            let hintContent = document.createTextNode("Look for gifs of a specific topic or be surprised when playing ");
+            end.appendChild(hintContent);
+            hint.id = "win";
+            document.body.appendChild(hint);
 
 
             let newButton = document.createElement("button");
@@ -235,7 +251,8 @@
             newButton.appendChild(buttonLabel);
             newButton.id = "reset";
             // newButton.onclick = buildGame();
-            document.getElementById("win").appendChild(newButton);
+            //document.getElementById("win")
+            hint.appendChild(newButton);
 
             document.getElementById("reset").addEventListener("click", buildGame);
             // f.onclick = buildGame();
@@ -335,6 +352,8 @@
         }
 
     </script>
+    <h2>Powered By Giphy</h2>
+        <img src="media/GIPHY Logo 75px.png">
 </body>
 
 </html>
