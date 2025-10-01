@@ -4,6 +4,7 @@ img {
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
 }
 
 a, button {
@@ -16,6 +17,7 @@ a, button {
 
 h2 {
     margin-bottom: 8px;
+    margin-top: 8px;
     font-family: "Quantico", sans-serif;
     font-size: 24px;
     font-weight: 400;
@@ -27,8 +29,10 @@ p {
   font-family: "Quantico", sans-serif; 
   font-size: 17px; 
   line-height: 1.6; 
+  text-align: center;
 }
 
+/* for navBar */
 a {
   margin: 0px;
 }
@@ -83,7 +87,7 @@ header {
   height: 1px;
   border: 0;
   background: linear-gradient(to right, transparent, rgba(242, 242, 242, 0.25), transparent);
-  margin: 50px auto;
+  margin: 30px auto;
   margin-bottom: 0px;
   width: 90%;
 }

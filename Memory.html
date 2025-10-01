@@ -24,13 +24,13 @@
         <h1>Memory</h1>       
 
         <label for="tags"></label>
-        <input id="tags" type="text" name="tags" autofocus><br>
+        <input id="tags" type="text" name="tags" autofocus>
         <button onClick="buildGame()">search for gifs</button>
 
         
     </section>
 
-    <table id="gifTable">
+    <table>
         <tbody>
             <tr>
                 <td id="0" onclick="setupPattern(0)"><img height="250" width="320" id="gif0"
@@ -96,18 +96,20 @@
         </tbody>
     </table>
 
+    <div id="addWhenWin"></div>
+
     <section class="centered">
 
         <h2>with the currently most popular gifs of a topic</h2>
         <p>please don't overuse this game<br>
-            the requests are limited to 100 per hour by gyphy.com</p>
+            the requests are limited to 100 per hour</p>
             <!-- <h2 id="result"></h2> -->
         <div class="separator"></div>
 
     </section>
 
     <script>
-        const examples = ["Grogu", "The Hobbit", "Spiderman", "The Order Of The Phoenix", "Mojang", "The Dark Knight", "Cute Kittens", "Puppies", "Minecraft Build", "Skywalker"];
+        const examples = ["Grogu", "The Hobbit", "Spiderman 4", "The Order Of The Phoenix", "Mojang", "The Dark Knight", "Cute Kittens", "Puppies", "Minecraft Build", "Skywalker"];
         let distribution = [];
         let correct = [];
         let sources = [];
@@ -126,11 +128,6 @@
             getGif();
 
 
-            // fill colors
-            // colors.push('blue');
-            // colors.push('green');
-            // colors.push('red');
-            // colors.push('yellow');
 
             // fill distribution new         
             newArr = [];
@@ -156,6 +153,7 @@
                 trys = 0;
             }
             
+            // reset the text and buttons that appear when user just won a game 
             if(document.getElementById("win") != null){
                 document.getElementById("win").remove();
                 document.getElementById("reset").remove();
@@ -184,11 +182,9 @@
                     case 1:
                         count++;
                         check = gifUrl;
-                        // console.log("REVEAL ANOTHER");
                         break;
                     case 2:
                         if (check === gifUrl) {
-                            // console.log("PAAR GEFUNDEN");
                             check = "";
                             count = 1;
                             correct.push(chosen[0]);
@@ -199,12 +195,10 @@
                             }
                             break;
                         } else {
-                            // console.log("KEIN PAAR");
                             count = 3;
                             break;
                         }
                     case 3:
-                        // console.log("RESET");
                         resetFalseGifPair();
                         check = "";
                         chosen.push(tempStore);
@@ -212,7 +206,7 @@
                         check = gifUrl;
                         break;
                 }
-            } else { console.log("Das Feld hattest du schon -.-"); }
+            } else { console.log("already clicked here -.-"); }
         }
 
 
@@ -227,35 +221,41 @@
         }
 
         function youWon() {
-            let end = document.createElement("h2");
+            /*  structure:
+                create holder
+                add h2 to holder
+                add h2 to holder
+                add button to holder
+                append holder to document.body
+            */
+
+            let holder = document.getElementById("addWhenWin");
+            holder.id = "win"
+
+            let end = document.createElement("p")
             let content = document.createTextNode("Success! It took you " + trys / 2 + " actions.");
             end.appendChild(content);
-            end.id = "win";
+            // holder.appendChild(end);
 
-            let table = getElementById("gifTable")
-            table.appendChild(end);
-
-            // let br = document.createElement("br");
-            // end.appendChild(br);
+            let br = document.createElement("br");
+            end.appendChild(br);
 
 
-            let hint = document.createElement("h2");
-            let hintContent = document.createTextNode("Look for gifs of a specific topic or be surprised when playing ");
+
+            // let hint = document.createElement("p");
+            let hintContent = document.createTextNode("Look for gifs of a specific topic or be surprised when playing");
             end.appendChild(hintContent);
-            hint.id = "win";
-            document.body.appendChild(hint);
+            holder.appendChild(end);
 
-
+            
             let newButton = document.createElement("button");
             let buttonLabel = document.createTextNode("again");
             newButton.appendChild(buttonLabel);
             newButton.id = "reset";
-            // newButton.onclick = buildGame();
-            //document.getElementById("win")
-            hint.appendChild(newButton);
-
+            holder.appendChild(newButton);
             document.getElementById("reset").addEventListener("click", buildGame);
-            // f.onclick = buildGame();
+
+            document.holder.appendChild(holder);
         }
 
         async function getGif() {
