@@ -11,21 +11,20 @@
         <nav class="navbar">
             <a class="active" href="index.html">Kilian Clemens Krüger - Portfolio</a>
             <a href="index.html#AndroidDevelopment">Android Development</a>
-            <a href="index.html#JavaApps">Java Apps</a>
+            <a href="index.html#JavaApps">Java</a>
             <a href="index.html#JS">JS</a>
             <a href="index.html#FurtherWorkExperience">Further Work Experience</a>
             <a href="index.html#Education">Education</a>
-            <a href="index.html#OtherHobbies">Other Hobbies</a>
+            <a href="index.html#OtherHobbies">Hobbies</a>
             <a class="contact" href="mailto:KilianCKrueger@gmail.com" target="_blank">Mail Me</a>
         </nav>
     </header>
 
     <section class="centered">
-        <h1>Memory</h1>       
-
+        <div id="addWhenWin"></div>
         <label for="tags"></label>
-        <input id="tags" type="text" name="tags" autofocus>
-        <button onClick="buildGame()">search for gifs</button>
+        <input id="tags" type="text" name="tags" placeholder="gifs of topic..." autofocus>
+        <button id="startButton" onClick="buildGame()">search</button>
 
         
     </section>
@@ -96,20 +95,19 @@
         </tbody>
     </table>
 
-    <div id="addWhenWin"></div>
+    
 
     <section class="centered">
 
         <h2>with the currently most popular gifs of a topic</h2>
         <p>please don't overuse this game<br>
             the requests are limited to 100 per hour</p>
-            <!-- <h2 id="result"></h2> -->
         <div class="separator"></div>
 
     </section>
 
     <script>
-        const examples = ["Grogu", "The Hobbit", "Spiderman 4", "The Order Of The Phoenix", "Mojang", "The Dark Knight", "Cute Kittens", "Puppies", "Minecraft Build", "Skywalker"];
+        const examples = ["Grogu", "The Hobbit", "Marvels Spiderman", "The Order Of The Phoenix", "Mojang", "The Dark Knight", "Cute Kittens", "Puppies", "Minecraft Build", "Skywalker"];
         let distribution = [];
         let correct = [];
         let sources = [];
@@ -122,11 +120,11 @@
         let trys = 0;
         let tags;
 
+        
         function buildGame() {
             let o = Math.floor(Math.random() * (examples.length));
             tags = examples[o];
             getGif();
-
 
 
             // fill distribution new         
@@ -142,6 +140,7 @@
                 }
             }
 
+
             // reset whole board to white gif
             for (let f = 0; f < 8; f++) {
                 let a = document.getElementById("gif" + f.toString());
@@ -153,12 +152,12 @@
                 trys = 0;
             }
             
+
             // reset the text and buttons that appear when user just won a game 
             if(document.getElementById("win") != null){
                 document.getElementById("win").remove();
                 document.getElementById("reset").remove();
             }
-
             console.log(distribution);
         }
 
@@ -221,12 +220,15 @@
         }
 
         function youWon() {
-            /*  structure:
+            /*  
+            structure:
                 create holder
                 add h2 to holder
                 add h2 to holder
                 add button to holder
                 append holder to document.body
+
+                modify start button
             */
 
             let holder = document.getElementById("addWhenWin");
@@ -235,27 +237,18 @@
             let end = document.createElement("p")
             let content = document.createTextNode("Success! It took you " + trys / 2 + " actions.");
             end.appendChild(content);
-            // holder.appendChild(end);
 
             let br = document.createElement("br");
             end.appendChild(br);
 
 
-
-            // let hint = document.createElement("p");
-            let hintContent = document.createTextNode("Look for gifs of a specific topic or be surprised when playing");
+            let hintContent = document.createTextNode("Look for gifs of a specific topic or be surprised when playing again.");
             end.appendChild(hintContent);
             holder.appendChild(end);
 
-            
-            let newButton = document.createElement("button");
-            let buttonLabel = document.createTextNode("again");
-            newButton.appendChild(buttonLabel);
-            newButton.id = "reset";
-            holder.appendChild(newButton);
-            document.getElementById("reset").addEventListener("click", buildGame);
 
-            document.holder.appendChild(holder);
+            let button = document.getElementById("startButton");
+            button.innerHTML = "search / play again";
         }
 
         async function getGif() {
@@ -275,10 +268,8 @@
             for (let i = 0; i < 4; i++) {
                 sources.push(a.data[i].images.original.url);
             }
-            // console.log(sources);
+            //console.log(sources);
         }
-
-
 
 
 
