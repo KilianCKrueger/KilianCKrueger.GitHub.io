@@ -2,8 +2,10 @@
 <html>
 
 <head>
-    <title>Memory</title>
-    <link rel="stylesheet" href="memoryStyle.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory: Krüger, Kilian</title>
+    <link rel="stylesheet" href="memoryStyles.css">
 </head>
 
 <body onload="buildGame();">
@@ -13,7 +15,7 @@
             <a href="index.html#AndroidDevelopment">Android Development</a>
             <a href="index.html#JavaApps">Java</a>
             <a href="index.html#JS">JS</a>
-            <a href="index.html#FurtherWorkExperience">Further Work Experience</a>
+            <a href="index.html#FurtherWorkExperience">Work Experience</a>
             <a href="index.html#Education">Education</a>
             <a href="index.html#OtherHobbies">Hobbies</a>
             <a class="contact" href="mailto:KilianCKrueger@gmail.com" target="_blank">Mail Me</a>
@@ -99,7 +101,7 @@
 
     <section class="centered">
 
-        <h2>with the currently most popular gifs of a topic</h2>
+        <h2>with the current most popular gifs of a topic</h2>
         <p>please don't overuse this game<br>
             the requests are limited to 100 per hour</p>
         <div class="separator"></div>
@@ -107,7 +109,7 @@
     </section>
 
     <script>
-        const examples = ["Grogu", "The Hobbit", "Marvels Spiderman", "The Order Of The Phoenix", "Mojang", "The Dark Knight", "Cute Kittens", "Puppies", "Minecraft Build", "Skywalker"];
+        const examples = ["Grogu", "The Hobbit", "Marvels Spiderman", "Harry Potter", "Mojang", "The Dark Knight", "Cute Kittens", "Puppies", "Minecraft Build", "Skywalker"];
         let distribution = [];
         let correct = [];
         let sources = [];
@@ -117,7 +119,7 @@
         let check = "";
         let tempStore;
         let count = 1;
-        let trys = 0;
+        let tries = 0;
         let tags;
 
         
@@ -149,7 +151,7 @@
                 check = "";
                 count = 1;
                 correct = [];
-                trys = 0;
+                tries = 0;
             }
             
 
@@ -165,7 +167,7 @@
         function setupPattern(i) {
             if (!chosen.includes(i) && !correct.includes(i)) {
 
-                trys++;
+                tries++;
 
                 if (chosen.length < 2) {
                     chosen.push(i);
@@ -235,7 +237,7 @@
             holder.id = "win"
 
             let end = document.createElement("p")
-            let content = document.createTextNode("Success! It took you " + trys / 2 + " actions.");
+            let content = document.createTextNode("Success! It took you " + tries / 2 + " actions.");
             end.appendChild(content);
 
             let br = document.createElement("br");
@@ -268,7 +270,6 @@
             for (let i = 0; i < 4; i++) {
                 sources.push(a.data[i].images.original.url);
             }
-            //console.log(sources);
         }
 
 

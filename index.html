@@ -4,9 +4,8 @@
 <head lang="en" id="0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <title>Krüger, Kilian</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -16,12 +15,16 @@
             <a href="#AndroidDevelopment">Android Development</a>
             <a href="#JavaApps">Java</a>
             <a href="#JS">JS</a>
-            <a href="#FurtherWorkExperience">Further Work Experience</a>
+            <a href="#FurtherWorkExperience">Work Experience</a>
             <a href="#Education">Education</a>
             <a href="#OtherHobbies">Hobbies</a>
-            <a class="contact" href="mailto:KilianCKrueger@gmail.com" target="_blank">Mail Me</a>
+            <a class="contact" href="mailto:KilianCKrueger@gmail.com" target="_blank">E-mail me</a>
         </nav>
     </header>
+
+    <script>
+        
+    </script>
 
     <main>
         <section id="AboutMe">
@@ -30,8 +33,8 @@
                 <li>tech savvy undergraduate of <a href="https://imi-bachelor.htw-berlin.de">
                         International Media and Computer Science</a> at the <a href="https://www.htw-berlin.de/en">
                         University of Applied Sciences Berlin, Germany</a></li>
-                <li>enrolled since 08/2024 - currently in 3rd semester</li>
-                <li>likes developing fun and useful programs, preferably with an UI</li>
+                <li>enrolled since October 2024 - currently in 4th semester</li>
+                <li>love to develop useful and fun programs that are nice to look at</li>
             </ul>
         </section>
 
@@ -39,49 +42,48 @@
 
         <section id="AndroidDevelopment">
             <h1>Android Development</h1>
-            <p>Starting in August of 2025, I have been taking the official Android Developer course. These are the Apps I developed on my own in the order I developed them.<a
-                    href="https://developers.google.com/profile/u/KilianCKrueger">See my Google Developer Badges</a>.
-            </p>
-            <p>Since then I have not only created several apps as part of the course but also realized my own ideas:
-            </p>
-            <div class="smallMargin"></div>
+            <p>In summer '25 I took part in the official Android Developer course. These are some Apps I developed on my own using the knowledge gained.</p>
 
             <h2>🧠 Train Your Brain</h2>
-            <p>An App challenging you to remember the sequence of blinking buttons. Then the user recreates this
-                sequence by memory. Similar to the Board Game Simon from Hasbro. 
-                <a href="https://github.com/KilianCKrueger/Train_Your_Brain">Get it on GitHub</a>.</p>
-
             <div class="video-container">
-                <video src="media/Train_Your_Brain_Video.mp4" controls></video>
+                <video src="media/Train_Your_Brain_Video.mp4" controls autoplay muted playsinline loop></video>
             </div>
+            <p>An App challenging you to remember the sequence of blinking buttons. The user then recreates this sequence by memory.
+                <a href="https://github.com/KilianCKrueger/Train_Your_Brain">APK Download</a></p>
+
+            
+
+
+
             <div class="smallMargin"></div>
 
+
+
             <h2>🌍 Name The Domain v1</h2>
-            <p>While playing GeoGuessr, I discovered that I couldn't reliably identify domains I came across. Motivated
-                to memorize the domains, I created an app to practise and quiz me. It has two Game Modes:</p>
-                <ul>
-                <li>4 Answers - the question is displayed on top and the user selects the fitting answer from 4 buttons</li>
-                <li>Typing - the user uses a TextField input to type the correct answer; there is a hint button that gives the user the first 3 letters, then fills in the correct answer</li>
-                </ul>
-                <p>Further, there is a switch to change whether domains or countries are asked for.
-            </p>
             <div class="video-container">
-                <video src="media/Name_The_Domain_Video.mp4" controls></video>
+                <video playsinline src="media/Name_The_Domain_Video.mp4" controls autoplay muted playsinline loop></video>
             </div>
 
-            <h2>🌍 Name The Domain v2</h2>
-            <p>Name The Domain had a lot of potential, so I added</p>
-            <ul>
-                <li>a button (and list) to switch between questions about capitals and domains</li>
-                <li>a difficulty system - for the hard mode my algorithm finds out how many entries in the answer list start with the same letter as the correct answer, then picks randomly from those with the same letter</li>
-                <li>a box showing the user's streak of correct answers</li>
-                <li>a help page to explain the app</li>
+            <p>Playing GeoGuessr, I couldn't reliably identify domains I came across. So I created an app to practise and quiz me. It has two Game Modes:</p>
+                <ul>
+                <li>4 Answers</li>
+                <li>Typing - with a TextField input and a hint button</li>
                 </ul>
-                <p>Additionally, I overhauled the GUI to look more modern; cleaned up, refactored and encapsulated the code.
+                <p>Further I implemented functionality to change whether domains or countries are queried.</p>
+            
+
+            <h2>🌍 Name The Domain v2</h2>
+            <p>I kept developing and added</p>
+            <ul>
+                <li>a difficulty system - for Hard Mode my custom algorithm finds the entries that start with the same letter as the correct answer</li>
+                <li>a user streak system</li>
+                <li>an info page</li>
+                </ul>
+                <p>Additionally, I applied best practises in programming (like encapsulation) and overhauled the GUI to look better
                 <a href="https://github.com/KilianCKrueger/Name_The_Domain" target="_blank">Get it on GitHub</a>.
             </p>
             <div class="video-container">
-                <video src="media/v2_Name_The_Domain_Video.mp4" controls></video>
+                <video src="media/v2_Name_The_Domain_Video.mp4" controls autoplay muted playsinline loop></video>
             </div>
 
 
@@ -92,16 +94,15 @@
 
         <section id="JavaApps">
             <h1>Java Apps</h1>
-            <p>For more than a year now, I have developed many applications in the context of the Data Structures &
-                Algorithms course.
-                Outside of this course I created a console based application to assist a friend in coordinating his files for 3D printing.</p>
+            <p>For over 2 years, I developed applications in the context of various university courses.
+                Outside of uni courses, I created a console based application to coordinate files for 3D printing.
+            </p>
 
             <div class="smallMargin"></div>
 
             <h2>🔠 The Scrabble Cheater</h2>
-            <p>This program requires an input of letters, of which it creates permutations. These are compared to the
-                supplied dictionary, eventually outputting words that can be played in Scrabble.</p>
-            <video class="wide_video" src="media/Scrabble_Cheater_Video.mp4" controls></video>
+            <p>For an input of letters, the program creates permutations and looks for them in a dictionary. Outputting words to play in Scrabble.</p>
+            <video class="wide_video" src="media/Scrabble_Cheater_Video.mp4" controls autoplay muted playsinline loop></video>
         </section>
 
         <div class="separator"></div>
@@ -121,24 +122,24 @@
         <div class="separator"></div>
 
         <section id="FurtherWorkExperience">
-            <h1>Further Work Experience</h1>
+            <h1>Work Experience</h1>
             <h2>🚸 Kita Kinderland</h2>
             <p>Recreated the <a href="https://www.kita-kinderland-strausberg.de">Kindergardens Website</a> with a
-                friend, using Jimdo as requested.</p>
+                friend, using Jimdo as requested (<a target="_blank" href="https://www.kita-kinderland-strausberg.de/impressum/#:~:text=Kilian%20Clemens%20Kr%C3%BCger%0AE%2DMail%3A%20KilianCKrueger%40gmail.com">credits</a>).</p>
 
             <div class="smallMargin"></div>
 
-            <h2>🌾 Gut Herzfelde</h2>
-            <p>Assisted in calculating the annual utility bill over a three-year period.</p>
+            <h2>🌾 Gut Herzfelde (2021-2024)</h2>
+            <p>Assisted in calculating the annual utility bill and with various other tasks like designing the <a href="https://www.gewerbeverein-ruedersdorf.de/site/assets/files/2500/gut_herzfelde.jpg" target="_blank">logo</a> (2021).</p>
         </section>
 
         <div class="separator"></div>
 
         <section id="Education">
             <h1>Education</h1>
-            <h2>🎓 HTW - University of Applied Sciences Berlin</h2>
+            <h2 onclick="window.open('https://www.htw-berlin.de/en', '_blank');" style="cursor:pointer">🎓 HTW - University of Applied Sciences Berlin</h2>
             <ul>
-                <li>undergraduate of International Media and Computer Science in the 3rd semester</li>
+                <li>undergraduate of International Media and Computer Science</li>
                 <li>expected graduation: Bachelor of Science - June 2027</li>
             </ul>
 
@@ -153,24 +154,25 @@
         <div class="separator"></div>
 
         <section id="OtherHobbies">
+            
             <h1>Other Hobbies</h1>
-            <h2>🌍 Geography</h2>
-            <p>I have a strong interest in geography. I enjoy learning all things geography, mostly through playing
-                GeoGuessr or learning flags.</p>
-
-            <div class="smallMargin"></div>
-
+            
             <h2>🎹 Playing the piano</h2>
-            <p>I love playing film music like
-                "Beverly Hills Cop - Axel F & Harold Faltermeyer",
-                "The Star Wars Main Theme, The Imperial March - John Williams"
-                and music from game scores like C418's "Minecraft: Volume Alpha".
-            </p>
-
+            <p>I love playing film music like "Beverly Hills Cop", "Star Wars Main Theme", "Imperial March" and music from game scores like C418's "Minecraft: Volume Alpha".</p>
+            
             <div class="smallMargin"></div>
 
             <h2>🏐 Playing Volleyball</h2>
-            <p>Since 2013, I've played volleyball weekly. Some years of this, I served as team captain.</p>
+            <p>Active volleyball team-player - since 2013. Several years of this as team captain.</p>
+            
+            <div class="smallMargin"></div>
+            
+            <h2>🌍 Geography</h2>
+            <p>I have a strong interest in geography and love learning new things about geography and diverse cultures. 
+                Playing GeoGuessr and learning flags help me expand my knowledge in this field.</p>
+
+
+            
         </section>
 
 
