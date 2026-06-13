@@ -103,6 +103,7 @@ video {
   display: block;
   height: auto;
   width: 100%;
+  margin: 0 auto;
 }
 
 .video-container {
@@ -116,9 +117,16 @@ video {
   overflow: hidden; 
 }
 
-.wide_video {
+.bw_video {
+  max-width: 1200px;
+  width: 95%;
+  border-radius: 12px; 
+}
+
+.scrabble_video {
   max-width: 950px;
   width: 90%;
+  border-radius: 12px; 
 }
 
 section[id] {
@@ -205,12 +213,8 @@ header {
 
 @media  (max-width: 1080px) {
 
-    .navbar a[href="#Education"],
-    .navbar a[href="#AndroidDevelopment"],
-    .navbar a[href="#JavaApps"],
-    .navbar a[href="#FurtherWorkExperience"],
-    .navbar a[href="#OtherHobbies"],
-    .navbar a[href="#JS"]{
+
+    .nav_link{
         display: none;
     }
 
