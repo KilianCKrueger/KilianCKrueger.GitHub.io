@@ -152,6 +152,22 @@ input[type="text"]:focus {
   outline: none;
 }
 
+.memory_cards {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 80%;
+  margin: auto;
+}
+
+.memory_cards img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+
 @media  (max-width: 1080px) {
 
     .navbar a[href="index.html#Education"],
@@ -161,6 +177,11 @@ input[type="text"]:focus {
     .navbar a[href="index.html#OtherHobbies"],
     .navbar a[href="index.html#JS"] {
         display: none;
+    }
+
+    .memory_cards {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
     }
 
     .navbar a.active {
